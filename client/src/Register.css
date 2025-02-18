@@ -1,0 +1,98 @@
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+  }
+  
+  html {
+    background: #f4f4f4;
+    font-family: 'Helvetica Neue', Arial, Sans-Serif;
+  }
+  
+  .register-container {
+  padding-left: 550px;
+  justify-content: center;
+  align-items: center;
+}
+  
+  .register-wrap {
+    position: relative;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.9);
+    width: 400px;
+    height: auto;
+    padding: 20px;
+
+  }
+  
+  h2 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #2c3e50;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  input {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  input:focus {
+    border: 1px solid #3498db;
+    outline: none;
+  }
+  
+  button {
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    background: #27ae60;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #2ecc71;
+  }
+  
+  p {
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  p a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  p a:hover {
+    text-decoration: underline;
+  }
+  
+  .role-select {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+  }  

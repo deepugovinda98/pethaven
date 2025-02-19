@@ -38,17 +38,17 @@ const HomePage = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/add-pet" className="nav-link">
+                <Link to="/about-page" className="nav-link">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/view-pets" className="nav-link">
+                <Link to="/petdetails" className="nav-link">
                   View Pets
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="nav-link">
+                <Link to="/contact-page" className="nav-link">
                   Contact Us
                 </Link>
               </li>

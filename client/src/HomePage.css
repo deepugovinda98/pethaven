@@ -14,7 +14,6 @@ body {
 /* Container */
 .container {
     max-width: 1600px;
-    /* margin: 0 auto; */
     padding: 0 15px; 
 }
 
@@ -45,8 +44,8 @@ body {
     list-style: none;
     display: flex;
     gap: 60px;
-    /* margin: 0; */
-    /* padding: 0; */
+    /* margin: 0;
+    padding: 0; */
 }
 
 .nav-link {

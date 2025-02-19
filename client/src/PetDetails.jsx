@@ -13,7 +13,7 @@ const PetDetails = () => {
               Home
             </Link>
             <Link to="/view-pets" className="header-link">
-              Contact Us
+              View Pets
             </Link>
           </nav>
         </div>

@@ -44,8 +44,8 @@ body {
     list-style: none;
     display: flex;
     gap: 60px;
-    /* margin: 0;
-    padding: 0; */
+    /* margin: 0; */
+    /* padding: 0; */
 }
 
 .nav-link {
@@ -65,7 +65,7 @@ body {
 /* Auth Button (e.g., Login/Logout) */
 .auth-btn {
     position: relative;
-    left: 310px;
+    left: 300px;
     background-color: #ff4d4d;
     color: white;
     border: none;

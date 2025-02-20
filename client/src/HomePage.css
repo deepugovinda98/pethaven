@@ -148,6 +148,8 @@ body {
 
 .adopt-btn,
 .add-btn {
+    position: relative;
+    /* left:300px; */
     background-color: #1CDC1B;
     color: white;
 }

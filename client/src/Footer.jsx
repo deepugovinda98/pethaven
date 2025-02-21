@@ -17,6 +17,7 @@ const Footer = () => {
           <Link to="/#" aria-label="Instagram">
             Instagram
           </Link>
+          
         </div>
       </div>
     </footer>

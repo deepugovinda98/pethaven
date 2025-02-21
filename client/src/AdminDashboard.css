@@ -1,70 +1,70 @@
 .admin-dashboard {
-    font-family: Arial, sans-serif;
-    color: #333;
-    min-height: 100vh;
-    min-width: 1536px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Header Navbar */
-  .admin-header {
-    background-color: #27777A; /* Darker Teal */
-    color: white;
-    padding: 15px 0;
-  }
-  
-  .admin-header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-  
-  .admin-title {
-    position: relative;
-    left:450px;
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  .logout-btn {
-    position: relative;
-    left: 540px;
-    top: 10px;
-    width: 90px;
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .logout-btn:hover {
-    background-color: #cc0000;
-  }
-  
-  /* Main Content */
-  .admin-main {
-    flex: 1;
-    margin: 20px auto;
-    padding: 20px;
-    background: #f7fafc;
-    border-radius: 8px;
-    max-width: 1200px;
-    text-align: center;
-  }
-  
-  /* Footer */
-  .admin-footer {
-    background-color: #2C7A7B;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-  }  
+  font-family: Arial, sans-serif;
+  color: #333;
+  min-height: 100vh;
+  min-width: 1536px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Navbar */
+.admin-header {
+  background-color: #27777A; /* Darker Teal */
+  color: white;
+  padding: 15px 0;
+}
+
+.admin-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.admin-title {
+  position: relative;
+  left:450px;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.logout-btn {
+  position: relative;
+  left: 540px;
+  top: 10px;
+  width: 90px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #cc0000;
+}
+
+/* Main Content */
+.admin-main {
+  flex: 1;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f7fafc;
+  border-radius: 8px;
+  max-width: 1200px;
+  text-align: center;
+}
+
+/* Footer */
+.admin-footer {
+  background-color: #2C7A7B;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}  

@@ -5,7 +5,7 @@ const app = express();
 const connectDB = require("./models/db"); 
 const authRoutes = require("./routes/authRoutes"); 
 
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT || 3004;
 
 
 app.use(cors());

@@ -43,7 +43,7 @@ const HomePage = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/view-pets" className="nav-link">
+                <Link to="/petdetails" className="nav-link">
                   View Pets
                 </Link>
               </li>

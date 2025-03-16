@@ -1,100 +1,302 @@
-  .pet-details {
-      font-family: Arial, sans-serif;
-      color: #333;
-    }
+/* Pet Detail Page Styles */
+.pet-detail-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
- 
-  .pet-details-header {
-    background-color: #319795;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 1410px;
-    padding: 10px 20px;
-    margin-bottom: 380px;
-    margin-right: 100px;
+/* Reusing header styles from HomePage.css */
+.header {
+  background-color: #27777A;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+.header-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header-nav {
+  margin-right: auto;
+  margin-left: 80px;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  margin: 0 20px;
+}
+
+.nav-link {
+  position: relative;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  padding: 5px 0;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #EAD94C;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #EAD94C;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.auth-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.auth-button:hover {
+  background-color: #e63939;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Pet Detail Content */
+.pet-detail-content {
+  flex: 1;
+  padding: 120px 40px 60px;
+  background-color: #f8f9fa;
+}
+
+.pet-profile {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pet-image-container {
+  height: 100%;
+  overflow: hidden;
+}
+
+.pet-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.pet-image:hover {
+  transform: scale(1.05);
+}
+
+.pet-info {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pet-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #27777A;
+  margin-bottom: 10px;
+}
+
+.pet-breed {
+  font-size: 1.4rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.pet-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 40px;
+}
+
+.adopt-button {
+  background-color: #1CDC1B;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.adopt-button:hover {
+  background-color: #18b418;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-button {
+  color: #27777A;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.back-button:hover {
+  color: #1CDC1B;
+  transform: translateX(-5px);
+}
+
+/* Footer */
+.footer {
+  background-color: #27777A;
+  padding: 40px 0;
+  color: white;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.copyright {
+  font-size: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+}
+
+.social-link {
+  color: white;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #EAD94C;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .pet-profile {
+    grid-template-columns: 1fr;
+    max-width: 700px;
   }
   
-  .navlinks{
-    display:flex;
-    gap:20px;
+  .pet-image-container {
+    height: 400px;
   }
+}
 
-
-  .pet-details-header nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    padding: 15px;
   }
   
-  /* .pet-details-main {
-    display: flex;
-    flex-wrap: wrap;
+  .header-logo {
+    margin-bottom: 10px;
+  }
+  
+  .header-nav {
+    margin: 15px 0;
+    width: 100%;
+  }
+  
+  .nav-list {
+    justify-content: center;
+  }
+  
+  .nav-item {
+    margin: 0 10px;
+  }
+  
+  .pet-detail-content {
+    padding: 150px 20px 40px;
+  }
+  
+  .pet-name {
+    font-size: 2.5rem;
+  }
+  
+  .pet-breed {
+    font-size: 1.2rem;
+  }
+  
+  .pet-description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
     gap: 20px;
-    margin-top: 20px;
-  } */
-  
-  .pet-image img {
-    width: 400px;
-    max-width: 100%;
-    border-radius: 8px;
   }
   
   .pet-info {
-    flex: 1;
-    min-width: 250px;
+    padding: 30px 20px;
   }
   
-  .pet-info h2 {
+  .pet-name {
     font-size: 2rem;
-    margin-bottom: 10px;
   }
   
-  .pet-info p {
-    font-size: 1rem;
-    margin-bottom: 10px;
+  .adopt-button, .back-button {
+    align-self: center;
   }
-  
-  .adopt-btn {
-    background-color: #2c7a7b;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .adopt-btn:hover {
-    background-color: #285e61;
-  }
-  
- /* Footer */
-.footer {
-  background-color: #2C7A7B;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.footer-container p {
-  margin: 0;
-}
-
-.footer-links {
-  margin-top: 10px;
-}
-
-.footer-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 0 10px;
-  transition: color 0.3s;
-}
-
-.footer-links a:hover {
-  color: #c2f5e8;
 }

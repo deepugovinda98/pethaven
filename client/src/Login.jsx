@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./Login.css";
-import axios from "axios";
-import { Link } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -10,7 +8,7 @@ function Login() {
   const [role, setRole] = useState("user");
   const navigate = useNavigate();
 
-  async function sendData(e) {
+  function handleSubmit(e) {
     e.preventDefault();
 
     if (!email || !pwd) {
@@ -18,57 +16,71 @@ function Login() {
       return;
     }
 
-    try {
-      const response = await axios.post("http://localhost:3003/auth/login", {
-        email: email,
-        pass: pwd,
-        role: role, // optional, if you're sending role info from frontend
-      });
-
-      alert(`${role.charAt(0).toUpperCase() + role.slice(1)} login successful!`);
-      localStorage.setItem("token", response.data.token);
-      console.log(response.data);
-
-      // Redirect based on role: use '/admindash' for admin users
-      if (response.data.role === "admin") {
-        navigate("/admindash");
-      } else {
-        navigate("/home");
-      }
-    } catch (error) {
-      console.error("Error during login:", error);
-      alert(error.response?.data?.error || "Error logging in!");
+    // Simulate successful login for demo purposes
+    console.log("Login successful for:", email, "as", role);
+    
+    // Set token in localStorage (in a real app, this would come from a server)
+    localStorage.setItem("token", "demo-token-12345");
+    
+    // Redirect based on role
+    if (role === "admin") {
+      navigate("/admindash");
+    } else {
+      navigate("/");
     }
   }
 
   return (
     <div className="login-container">
       <div className="login-wrap">
-        <h2>Log In</h2>
-        <form onSubmit={sendData}>
-          <div className="form">
-            {/* Role Dropdown */}
-            <select value={role} onChange={(e) => setRole(e.target.value)}>
-              <option value="user">User</option>
-              <option value="admin">Admin</option>
+        <h2>Welcome to Pet Haven</h2>
+        <p className="login-subtitle">Sign in to continue</p>
+        
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="role">I am a:</label>
+            <select 
+              id="role"
+              value={role} 
+              onChange={(e) => setRole(e.target.value)}
+              className="select-input"
+            >
+              <option value="user">Pet Adopter</option>
+              <option value="admin">Shelter Admin</option>
             </select>
+          </div>
 
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
             <input
+              id="email"
               type="email"
-              placeholder="Email"
+              placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
             <input
+              id="password"
               type="password"
-              placeholder="Password"
+              placeholder="Enter your password"
               value={pwd}
               onChange={(e) => setPwd(e.target.value)}
+              required
             />
-            <button type="submit">Sign In</button>
+          </div>
+          
+          <button type="submit" className="login-button">Sign In</button>
+          
+          <div className="form-footer">
             <p>
-              Don't have an account? <Link to="/register">Register Here</Link>
+              Don't have an account? <Link to="/register" className="register-link">Register Here</Link>
             </p>
+            <Link to="/" className="home-link">Return to Home</Link>
           </div>
         </form>
       </div>

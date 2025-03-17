@@ -81,7 +81,7 @@ const PetDetails = () => {
               </li>
             </ul>
           </nav>
-          <Link to={isLoggedIn ? "/" : "/login"} className="auth-button">
+          <Link to="/login" className="auth-button">
             {isLoggedIn ? "Logout" : "Login"}
           </Link>
         </div>

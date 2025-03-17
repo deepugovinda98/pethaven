@@ -1,36 +1,55 @@
-// const getUsers = (req, res) => { res.send("User route") };
+const Pet = require("../models/petModel");
 
-const getPets = async (req, res) => {
+// Get all pets (for admin dashboard, includes unapproved pets)
+const getAllPets = async (req, res) => {
   try {
-    const pets = await Pet.find();
+    const pets = await Pet.find(); // Fetch all pets
     res.json(pets);
   } catch (err) {
     res.status(500).json({ error: "Server error while fetching pets" });
   }
-}
+};
 
-const getPet = async (req, res) => {
+// Get only approved & non-adopted pets (for Featured Pets section)
+const getApprovedPets = async (req, res) => {
   try {
-    const pet = await Pet.findById(req.params.petId);
-    if (!pet) return res.status(404).json({ error: "Pet not found" });
-    res.json(pet);
+    const pets = await Pet.find({ approved: true, adoption_status: "no" });
+    res.json(pets);
   } catch (err) {
-    res.status(500).json({ error: "Server error while fetching pet details" });
+    res.status(500).json({ error: "Server error while fetching featured pets" });
   }
-}
+};
+
 
 const addPet = async (req, res) => {
-  const { name, breed, age, description, image } = req.body;
+  const { name, species, breed, age, gender, pet_details, photos, health_status, vaccinated, documents_link, owner_id } = req.body;
+
+  if (!owner_id) {
+    return res.status(400).json({ error: "User must be logged in to add a pet." });
+  }
 
   try {
-    const newPet = new Pet({ name, breed, age, description, image });
+    const newPet = new Pet({
+      name,
+      species,
+      breed,
+      age,
+      gender,
+      pet_details,
+      photos,
+      health_status,
+      vaccinated,
+      documents_link,
+      owner_id,
+      approved: false // Default: waiting for admin approval
+    });
+
     await newPet.save();
-    res.status(201).json({ message: "Pet added successfully!", pet: newPet });
+    res.status(201).json({ message: "Pet added successfully, pending approval!", pet: newPet });
   } catch (err) {
     res.status(500).json({ error: "Server error while adding pet" });
   }
-}
+};
 
-// const addUser = (req, res) => { res.json(req.body) };
 
-module.exports = { getPets, getPet, addPet }
+module.exports = { getAllPets, getApprovedPets, addPet };

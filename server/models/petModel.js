@@ -13,8 +13,9 @@ const petSchema = new mongoose.Schema({
     vaccinated: Boolean,
     documents_link: String,
     owner_id: String,
-  });
-  
-  const Pet = mongoose.model("Pet", petSchema);
+    approved: { type: Boolean, default: false }  // New field to check admin approval
+});
+
+const Pet = mongoose.model("Pet", petSchema);
 
 module.exports = Pet;

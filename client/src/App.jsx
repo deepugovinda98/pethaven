@@ -5,6 +5,8 @@ import Login from './Login';
 import Register from './Register';
 import PetDetails from './PetDetails';
 import AdminDashboard from './AdminDashboard';
+import AddPet from './AddPet';
+import AdoptPet from './AdoptPet';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/petdetails/:id' element={<PetDetails />} />
         <Route path='/admindash' element={<AdminDashboard />} />
+        <Route path='/add-pet' element={<AddPet />} />
+        <Route path="/adopt" element={<AdoptPet />} />  {/* New Route for Adopt Page */}
       </Routes>
     </>
   );

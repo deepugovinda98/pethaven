@@ -1,22 +1,29 @@
-const getAdmins = (req, res) => { res.send("Admin route") };
+const Pet = require("../models/petModel");
 
-const getAdmin = (req, res) => { res.send(`Admin ID is ${req.params.id}`) };
+// Admin approves pet
+const approvePet = async (req, res) => {
+  try {
+    const updatedPet = await Pet.findByIdAndUpdate(
+      req.params.petId,
+      { approved: true },
+      { new: true }
+    );
 
-const addAdmin = (req, res) => { res.json(req.body) };
-
-const editPet = async (req, res) => {
-    try {
-      const updatedPet = await Pet.findByIdAndUpdate(
-        req.params.petId,
-        { status: "yes" }, // Change status from "no" to "yes"
-        { new: true }
-      );
-  
-      if (!updatedPet) return res.status(404).json({ error: "Pet not found" });
-      res.json({ message: "Pet status updated!", pet: updatedPet });
-    } catch (err) {
-      res.status(500).json({ error: "Server error while updating pet status" });
-    }
+    if (!updatedPet) return res.status(404).json({ error: "Pet not found" });
+    res.json({ message: "Pet approved!", pet: updatedPet });
+  } catch (err) {
+    res.status(500).json({ error: "Server error while approving pet" });
   }
+};
 
-module.exports = { getAdmins, getAdmin, addAdmin, editPet };
+// Get all pets (approved and not approved)
+const getAllPets = async (req, res) => {
+  try {
+    const pets = await Pet.find();
+    res.json(pets);
+  } catch (err) {
+    res.status(500).json({ error: "Server error while fetching pets" });
+  }
+};
+
+module.exports = { approvePet, getAllPets };

@@ -60,7 +60,7 @@ exports.login = async (req, res) => {
       return res.status(400).json({ error: "Email and password are required!" });
     }
 
-    // Check if the user exists
+    // Find the user in the database
     const user = await User.findOne({ email });
     if (!user) {
       return res.status(401).json({ error: "Invalid email or password!" });
@@ -72,14 +72,21 @@ exports.login = async (req, res) => {
       return res.status(401).json({ error: "Invalid email or password!" });
     }
 
-    // Generate JWT token with role included
+    // Generate JWT token
     const token = jwt.sign(
       { id: user._id, email: user.email, role: user.role },
       process.env.SECRET_KEY || "default_secret",
       { expiresIn: "1h" }
     );
 
-    res.status(200).json({ message: "Login successful!", token, role: user.role });
+    // Send user ID in response
+    res.status(200).json({ 
+      message: "Login successful!", 
+      token, 
+      userId: user._id,  // Send userId in response
+      role: user.role 
+    });
+
   } catch (err) {
     console.error("Error in login:", err);
     res.status(500).json({ error: "Server error while logging in" });

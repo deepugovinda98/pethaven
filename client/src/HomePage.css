@@ -42,7 +42,7 @@ a {
 
 /* Header Styles */
 .header {
-  background-color: #27777A;
+  background-color: #ffa013;
   position: fixed;
   top: 0;
   left: 0;
@@ -116,7 +116,7 @@ a {
 }
 
 .auth-button {
-  background-color: #ff4d4d;
+  background-color: #c02626;
   color: white;
   border: none;
   border-radius: 25px;
@@ -251,12 +251,13 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
   margin-top: 40px;
+  
 }
 
 .pet-card {
   background-color: white;
   border-radius: 15px;
-  overflow: hidden;
+  /* overflow:scroll; */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.5s ease;
   animation: fadeIn 0.8s ease-out;
@@ -268,7 +269,8 @@ a {
 }
 
 .pet-image-container {
-  height: 250px;
+  height: 200px; /* Reduce height */
+  width: 100%; /* Ensure it adapts to the card width */
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -276,15 +278,18 @@ a {
 }
 
 .pet-image {
-  width: 100%;
-  height: 100%;
+  border-radius: 15px;
+  width: 80%; /* Reduce width */
+  height: auto; /* Maintain aspect ratio */
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
 .pet-card:hover .pet-image {
-  transform: scale(1.1);
+  transform: scale(1.05); /* Slightly smaller hover effect */
+  
 }
+
 
 /* Fix for pet-details section */
 .pet-details {
@@ -294,12 +299,51 @@ a {
   width: 100%;
 }
 
-/* Ensure pe
+.pet-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #27777A;
+}
 
+.pet-breed {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.pet-link {
+  display: inline-block;
+  color: #27777A;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 3px;
+  transition: all 0.3s ease;
+}
+
+.pet-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #27777A;
+  transition: width 0.3s ease;
+}
+
+.pet-link:hover {
+  color: #1CDC1B;
+}
+
+.pet-link:hover::after {
+  width: 100%;
+  background-color: #1CDC1B;
+}
 
 /* About Section */
 .about-section {
-  padding: 100px 0;
+  padding: 200px 0;
   background-color: #f3f8f8;
 }
 

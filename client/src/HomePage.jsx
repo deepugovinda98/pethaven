@@ -29,15 +29,27 @@ const HomePage = () => {
       {/* Header */}
       <header className="header">
         <div className="header-container">
-          <h1 className="header-logo">Pet Haven</h1>
+          <h1 className="header-logo">
+            <Link to="/" className="logo-link">Pet Haven</Link>
+          </h1>
           <nav className="header-nav">
             <ul className="nav-list">
               <li className="nav-item">
                 <Link to="/" className="nav-link">Home</Link>
               </li>
               <li className="nav-item">
-                <Link to="/about" className="nav-link">About Us</Link>
+                <Link
+                  to="/#abouting"
+                  className="nav-link"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById("abouting")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  About Us
+                </Link>
               </li>
+
               <li className="nav-item">
                 <Link to="/pets" className="nav-link">View Pets</Link>
               </li>
@@ -76,7 +88,7 @@ const HomePage = () => {
               <div className="pet-details">
                 <h3 className="pet-name">Buddy</h3>
                 <p className="pet-breed">Golden Retriever, 2 years old</p>
-                <Link to="/pets/1" className="pet-link">View Details</Link>
+                <Link to="/petdetails/1" className="pet-link">View Details</Link>
               </div>
             </div>
 
@@ -87,7 +99,7 @@ const HomePage = () => {
               <div className="pet-details">
                 <h3 className="pet-name">Luna</h3>
                 <p className="pet-breed">Siberian Husky, 1 year old</p>
-                <Link to="/pets/2" className="pet-link">View Details</Link>
+                <Link to="/petdetails/2" className="pet-link">View Details</Link>
               </div>
             </div>
 
@@ -98,7 +110,7 @@ const HomePage = () => {
               <div className="pet-details">
                 <h3 className="pet-name">Max</h3>
                 <p className="pet-breed">Beagle, 3 years old</p>
-                <Link to="/pets/3" className="pet-link">View Details</Link>
+                <Link to="/petdetails/3" className="pet-link">View Details</Link>
               </div>
             </div>
           </div>
@@ -106,18 +118,20 @@ const HomePage = () => {
       </section>
 
       {/* About Us Section */}
-      <section className="about-section">
-        <div className="container">
-          <h2 className="section-title">About Us</h2>
-          <div className="about-content">
-            <p className="about-text">
-              Welcome to Pet Haven, a loving space where abandoned and rescued
-              pets find a second chance at happiness. Our mission is to connect
-              compassionate pet lovers with animals in need, ensuring they find
-              the perfect forever home.
-            </p>
+      <section id="abouting">
+        <section className="about-section">
+          <div className="container">
+            <h2 className="section-title">About Us</h2>
+            <div className="about-content">
+              <p className="about-text">
+                Welcome to Pet Haven, a loving space where abandoned and rescued
+                pets find a second chance at happiness. Our mission is to connect
+                compassionate pet lovers with animals in need, ensuring they find
+                the perfect forever home.
+              </p>
+            </div>
           </div>
-        </div>
+        </section>
       </section>
 
       {/* Footer */}

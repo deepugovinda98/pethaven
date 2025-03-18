@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 import "./Login.css";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
-  const [role, setRole] = useState("user");
+  const [role, setRole] = useState("user"); // Default role as "user"
   const navigate = useNavigate();
 
   function handleSubmit(e) {
@@ -16,18 +17,31 @@ function Login() {
       return;
     }
 
-    // Simulate successful login for demo purposes
-    console.log("Login successful for:", email, "as", role);
-    
-    // Set token in localStorage (in a real app, this would come from a server)
-    localStorage.setItem("token", "demo-token-12345");
-    
-    // Redirect based on role
-    if (role === "admin") {
-      navigate("/admindash");
-    } else {
-      navigate("/");
-    }
+    // Send login request to backend
+    axios.post("http://localhost:3003/auth/login", { email, pass: pwd, role }) // Send role to backend
+      .then((response) => {
+        console.log("Login Response:", response.data); // Debugging log
+
+        if (response.data.token && response.data.userId) {
+          // Store token and user ID in localStorage
+          localStorage.setItem("token", response.data.token);
+          localStorage.setItem("userId", response.data.userId);
+          localStorage.setItem("role", response.data.role);
+
+          // Redirect based on role
+          if (response.data.role === "admin") {
+            navigate("/admindash");
+          } else {
+            navigate("/");
+          }
+        } else {
+          alert("Login failed! Please check your credentials.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error during login:", error);
+        alert("Invalid email or password!");
+      });
   }
 
   return (

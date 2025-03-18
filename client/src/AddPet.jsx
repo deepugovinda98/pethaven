@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./AddPet.css";
 
 const AddPet = () => {
@@ -89,6 +89,8 @@ const AddPet = () => {
         <input type="text" name="documents_link" placeholder="Documents Link (if any)" value={petData.documents_link} onChange={handleChange} />
         
         <button type="submit">Add Pet</button>
+
+        <Link to="/home" className="home-link">Return to home</Link>
       </form>
     </div>
   ) : null;

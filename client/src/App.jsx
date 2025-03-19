@@ -19,7 +19,7 @@ function App() {
         <Route path='/petdetails/:id' element={<PetDetails />} />
         <Route path='/admindash' element={<AdminDashboard />} />
         <Route path='/add-pet' element={<AddPet />} />
-        <Route path="/adopt" element={<AdoptPet />} />  {/* New Route for Adopt Page */}
+        <Route path="/adopt" element={<AdoptPet />} />
       </Routes>
     </>
   );

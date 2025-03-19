@@ -42,7 +42,7 @@ a {
 
 /* Header Styles */
 .header {
-  background-color: #ffa013;
+  background-color: #27777A;
   position: fixed;
   top: 0;
   left: 0;
@@ -116,7 +116,7 @@ a {
 }
 
 .auth-button {
-  background-color: #c02626;
+  background-color: #ff4d4d;
   color: white;
   border: none;
   border-radius: 25px;
@@ -278,16 +278,15 @@ a {
 }
 
 .pet-image {
-  border-radius: 15px;
+  
   width: 80%; /* Reduce width */
-  height: auto; /* Maintain aspect ratio */
+  height: 100px; /* Maintain aspect ratio */
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
 .pet-card:hover .pet-image {
   transform: scale(1.05); /* Slightly smaller hover effect */
-  
 }
 
 

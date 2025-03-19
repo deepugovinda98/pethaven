@@ -7,6 +7,7 @@ import PetDetails from './PetDetails';
 import AdminDashboard from './AdminDashboard';
 import AddPet from './AddPet';
 import AdoptPet from './AdoptPet';
+import ContactUs from './ContactUs';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/admindash' element={<AdminDashboard />} />
         <Route path='/add-pet' element={<AddPet />} />
         <Route path="/adopt" element={<AdoptPet />} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
     </>
   );

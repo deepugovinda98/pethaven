@@ -51,10 +51,7 @@ const HomePage = () => {
               </li>
 
               <li className="nav-item">
-                <Link to="#featuring" className="nav-link" onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById("featuring")?.scrollIntoView({ behavior: "smooth" });
-                  }}>View Pets</Link>
+                <Link to="/pets" className="nav-link">View Pets</Link>
               </li>
               <li className="nav-item">
                 <Link to="/contact" className="nav-link">Contact Us</Link>
@@ -73,14 +70,14 @@ const HomePage = () => {
           <h1 className="hero-title">Find Your Perfect Companion</h1>
           <p className="hero-subtitle">Helping pets find loving homes, one adoption at a time.</p>
           <div className="hero-buttons">
-            <Link to="/adopt" className="button button-primary">Adopt a Pet</Link>
+            <Link to="/pets" className="button button-primary">Adopt a Pet</Link>
             <Link to="/add-pet" className="button button-secondary">Add a Pet</Link>
           </div>
         </div>
       </section>
 
       {/* Featured Pets Section */}
-      <section className="featured-pets" id="featuring">
+      <section className="featured-pets">
         <div className="container">
           <h2 className="section-title">Featured Pets</h2>
           <div className="pet-grid">

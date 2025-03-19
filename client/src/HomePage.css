@@ -74,13 +74,13 @@ a {
 
 .header-nav {
   margin-right: auto;
-  margin-left: 80px;
+  margin-left: 150px;
 }
 
 .nav-list {
   display: flex;
   list-style: none;
-  margin-left: 50px;
+  margin-left: 550px;
 }
 
 .nav-item {

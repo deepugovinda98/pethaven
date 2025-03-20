@@ -51,7 +51,7 @@ const HomePage = () => {
               </li>
 
               <li className="nav-item">
-                <Link to="/pets" className="nav-link">View Pets</Link>
+                <Link to="/adopt" className="nav-link">View Pets</Link>
               </li>
               <li className="nav-item">
                 <Link to="/contact" className="nav-link">Contact Us</Link>
@@ -70,7 +70,7 @@ const HomePage = () => {
           <h1 className="hero-title">Find Your Perfect Companion</h1>
           <p className="hero-subtitle">Helping pets find loving homes, one adoption at a time.</p>
           <div className="hero-buttons">
-            <Link to="/pets" className="button button-primary">Adopt a Pet</Link>
+            <Link to="/adopt" className="button button-primary">Adopt a Pet</Link>
             <Link to="/add-pet" className="button button-secondary">Add a Pet</Link>
           </div>
         </div>

@@ -13,7 +13,7 @@ const AddPet = () => {
     age: "",
     gender: "",
     pet_details: "",
-    photos: "",
+    photos: null,
     health_status: "",
     vaccinated: false,
     documents_link: "",
@@ -78,7 +78,7 @@ const AddPet = () => {
 
         <textarea name="pet_details" placeholder="Short Description" value={petData.pet_details} onChange={handleChange} required></textarea>
         
-        <input type="text" name="photos" placeholder="Photo URL" value={petData.photos} onChange={handleChange} required />
+        <input type="file" name="photos" placeholder="Photo URL" value={petData.photos} onChange={handleChange} required />
         <input type="text" name="health_status" placeholder="Health Status" value={petData.health_status} onChange={handleChange} required />
         
         <label>

@@ -312,6 +312,21 @@ tr:hover {
   background-color: #1d5658;
 }
 
+.reject-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.reject-btn:hover {
+  background-color: #cc0000;
+}
+
+
 /* Logout Button */
 /* Logout Button - Top Right Corner */
 .logout-btn {

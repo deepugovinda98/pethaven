@@ -70,18 +70,18 @@ const AdminDashboard = () => {
                 {!sidebarCollapsed && <span className="sidebar-link-text">Users</span>}
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="#" className="sidebar-link">
                 <span className="sidebar-icon">📈</span>
                 {!sidebarCollapsed && <span className="sidebar-link-text">Analytics</span>}
               </a>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <a href="#" className="sidebar-link">
                 <span className="sidebar-icon">⚙️</span>
                 {!sidebarCollapsed && <span className="sidebar-link-text">Settings</span>}
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
         
@@ -137,7 +137,7 @@ const AdminDashboard = () => {
               </div>
             </div>
             
-            <div className="stat-card-wrapper">
+            {/* <div className="stat-card-wrapper">
               <div className="stat-card">
                 <div className="stat-info">
                   <div className="stat-title">Adoption Rate</div>
@@ -146,7 +146,7 @@ const AdminDashboard = () => {
                 </div>
                 <div className="stat-icon">📈</div>
               </div>
-            </div>
+            </div> */}
           </div>
           
           <div className="pet-management-section">

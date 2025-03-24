@@ -313,7 +313,11 @@ tr:hover {
 }
 
 /* Logout Button */
+/* Logout Button - Top Right Corner */
 .logout-btn {
+  position: absolute;
+  top: 1rem;
+  right: 3rem;
   background-color: #ff4d4d;
   color: white;
   border: none;
@@ -323,13 +327,14 @@ tr:hover {
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s;
-  margin-top: 1rem;
   display: inline-block;
+  width: 100px;
 }
 
 .logout-btn:hover {
   background-color: #cc0000;
 }
+
 
 /* Footer */
 .admin-footer {

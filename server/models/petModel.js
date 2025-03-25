@@ -13,7 +13,8 @@ const petSchema = new mongoose.Schema({
     vaccinated: Boolean,
     documents_link: String,
     owner_id: String,
-    approved: { type: Boolean, default: false }  // New field to check admin approval
+    approved: { type: Boolean, default: false },  // New field to check admin approval
+    rejected: { type: Boolean, default: false },
 });
 
 const Pet = mongoose.model("Pet", petSchema);

@@ -45,20 +45,20 @@ const AddPet = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:3003/user/add-pet", { 
-      ...petData, 
+    axios.post("http://localhost:3003/user/add-pet", {
+      ...petData,
       photos: [petData.photos]
     }, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
     })
-    .then((res) => {
-      alert("Pet added successfully! Pending admin approval.");
-      navigate("/home");
-    })
-    .catch((err) => {
-      console.error("Error adding pet:", err);
-      alert("Failed to add pet. Please try again.");
-    });
+      .then((res) => {
+        alert("Pet added successfully! Pending admin approval.");
+        navigate("/home");
+      })
+      .catch((err) => {
+        console.error("Error adding pet:", err);
+        alert("Failed to add pet. Please try again.");
+      });
   };
 
   return isLoggedIn ? (
@@ -77,21 +77,29 @@ const AddPet = () => {
         </select>
 
         <textarea name="pet_details" placeholder="Short Description" value={petData.pet_details} onChange={handleChange} required></textarea>
-        
+
         <input type="file" name="photos" placeholder="Photo URL" value={petData.photos} onChange={handleChange} required />
         <input type="text" name="health_status" placeholder="Health Status" value={petData.health_status} onChange={handleChange} required />
-        
-        <label>
+
+        <div className="checkbox-container">
+          <label htmlFor="vaccinated">Vaccinated</label>
+          <input type="checkbox" id="vaccinated" name="vaccinated" checked={petData.vaccinated} onChange={handleChange} />
+        </div>
+
+
+        {/* <label>
           <input type="checkbox" name="vaccinated" checked={petData.vaccinated} onChange={handleChange} />
           Vaccinated
-        </label>
-        
+        </label> */}
+
         <input type="text" name="documents_link" placeholder="Documents Link (if any)" value={petData.documents_link} onChange={handleChange} />
-        
+
         <button type="submit">Add Pet</button>
 
         <Link to="/home" className="home-link">Return to home</Link>
       </form>
+
+
     </div>
   ) : null;
 };

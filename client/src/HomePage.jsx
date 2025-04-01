@@ -134,17 +134,51 @@ const HomePage = () => {
         </section>
       </section>
 
-      {/* Footer */}
       <footer className="footer">
-        <div className="container footer-container">
-          <p className="copyright">© 2025 Pet Haven. All rights reserved.</p>
-          <div className="social-links">
-            <Link to="/#" className="social-link" aria-label="Facebook">Facebook</Link>
-            <Link to="/#" className="social-link" aria-label="Twitter">Twitter</Link>
-            <Link to="/#" className="social-link" aria-label="Instagram">Instagram</Link>
-          </div>
-        </div>
-      </footer>
+  <div className="container footer-container">
+    {/* Left Section - Logo & Tagline */}
+    <div className="footer-logo">
+      <h2>Pet Haven</h2>
+      <p>Connecting pets with loving homes</p>
+    </div>
+
+    {/* Quick Links */}
+    <div className="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Adopt</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    {/* Contact Info */}
+    <div className="footer-contact">
+      <h4>Contact Us</h4>
+      <p>123 Pet Street, Pawville</p>
+      <p>Email: info@pethaven.com</p>
+      <p>Phone: (123) 456-7890</p>
+    </div>
+
+    {/* Social Links */}
+    <div className="footer-social">
+      <h4>Follow Us</h4>
+      <div className="social-links">
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  {/* Bottom Section - Copyright */}
+  <div className="footer-bottom">
+    <p>© 2025 Pet Haven. All rights reserved.</p>
+  </div>
+</footer>
+
+
     </div>
   );
 };

@@ -1,36 +1,79 @@
+/* body {
+  background: url("https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80") 
+              no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
 .add-pet-container {
-    max-width: 500px;
-    margin: auto;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+  max-width: 450px;
+  margin: auto;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   
-  .add-pet-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .add-pet-form input,
-  .add-pet-form select,
-  .add-pet-form textarea {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  
-  .add-pet-form button {
-    background: #27777A;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-  }
-  
-  .add-pet-form button:hover {
-    background: #1e5e60;
-  }  
+  max-height: 90vh; /* Prevents scrolling on the entire page */
+  /* overflow: auto; Scrolls inside the form if needed */
+}
+
+.add-pet-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.add-pet-form input,
+.add-pet-form select,
+.add-pet-form textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.add-pet-form button {
+  background: #27777A;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.add-pet-form button:hover {
+  background: #1e5e60;
+}
+
+.home-link {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #27777A;
+  text-decoration: none;
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjusts spacing between label and checkbox */
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}

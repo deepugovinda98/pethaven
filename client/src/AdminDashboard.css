@@ -25,7 +25,7 @@
   font-size: 1.875rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
-  color: #27777A;
+  color: #8F6AF9;
 }
 
 /* Sidebar Styles */
@@ -117,7 +117,7 @@
 
 .sidebar-link.active {
   background-color: rgba(39, 119, 122, 0.1);
-  color: #27777A;
+  color: #8F6AF9;
   font-weight: 600;
 }
 
@@ -129,7 +129,7 @@
 
 .sidebar-link:hover .sidebar-icon,
 .sidebar-link.active .sidebar-icon {
-  color: #27777A;
+  color: #8F6AF9;
 }
 
 .sidebar-link-text {
@@ -151,7 +151,7 @@
   width: 2rem;
   height: 2rem;
   border-radius: 9999px;
-  background-color: #27777A;
+  background-color: #8F6AF9;
   display: flex;
   align-items: center;
   justify-content: center;

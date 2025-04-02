@@ -8,6 +8,8 @@ import AdminDashboard from './AdminDashboard';
 import AddPet from './AddPet';
 import AdoptPet from './AdoptPet';
 import ContactUs from './ContactUs';
+import Navbar from './navbar';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path='/add-pet' element={<AddPet />} />
         <Route path="/adopt" element={<AdoptPet />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path='/navbar' element={<Navbar/>}/>
+        <Route path='/footer' element={<Footer/>}/>
       </Routes>
     </>
   );

@@ -1,52 +1,45 @@
-/* body {
-  background: url("https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80") 
-              no-repeat center center;
-  background-size: cover;
-  height: 100vh;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
+/* Ensures proper spacing with navbar and footer */
 .add-pet-container {
   max-width: 450px;
-  margin: auto;
-  padding: 15px;
+  margin: 80px auto 50px auto; /* Adds margin at the top and bottom */
+  padding: 20px;
   background: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  max-height: 90vh; /* Prevents scrolling on the entire page */
-  /* overflow: auto; Scrolls inside the form if needed */
+  min-height: 60vh; /* Allows space for the footer */
 }
 
+/* Ensures the form fits well within the container */
 .add-pet-form {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   width: 100%;
 }
 
+/* Input fields styling */
 .add-pet-form input,
 .add-pet-form select,
 .add-pet-form textarea {
-  padding: 8px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  width: 100%;
 }
 
+/* Submit button styling */
 .add-pet-form button {
   background: #27777A;
   color: white;
-  padding: 10px;
+  padding: 12px;
   border: none;
   cursor: pointer;
   font-size: 1rem;
-  border-radius: 4px;
+  border-radius: 5px;
   transition: all 0.3s ease;
 }
 
@@ -54,9 +47,24 @@
   background: #1e5e60;
 }
 
+/* Checkbox container styling */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Ensuring the checkbox is properly sized */
+.checkbox-container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Link back to home */
 .home-link {
   text-align: center;
-  margin-top: 5px;
+  margin-top: 10px;
   font-size: 0.9rem;
   color: #27777A;
   text-decoration: none;
@@ -66,14 +74,10 @@
   text-decoration: underline;
 }
 
-.checkbox-container {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Adjusts spacing between label and checkbox */
-}
-
-.checkbox-container input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
+/* Ensures responsiveness */
+@media (max-width: 768px) {
+  .add-pet-container {
+    width: 90%;
+    margin-top: 100px; /* Extra space for mobile navbar */
+  }
 }

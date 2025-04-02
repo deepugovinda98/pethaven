@@ -1,0 +1,141 @@
+/* Footer Container */
+.footer {
+    background-color: #111;
+    color: white;
+    padding: 40px 0;
+    font-size: 14px;
+  }
+  
+  /* Footer Layout */
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Logo Section */
+  .footer-logo {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .footer-logo h2 {
+    font-size: 22px;
+    color: #8f79ce; /* Light Purple */
+    margin-bottom: 5px;
+  }
+  
+  .footer-logo p {
+    font-size: 14px;
+    color: #bbb;
+  }
+  
+  /* Quick Links & Contact */
+  .footer-links,
+  .footer-contact {
+    flex: 1;
+    min-width: 180px;
+  }
+  
+  .footer-links h4,
+  .footer-contact h4,
+  .footer-social h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links ul li {
+    margin-bottom: 5px;
+  }
+  
+  .footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links ul li a:hover {
+    color: #A78BFA;
+  }
+  
+  /* Contact Section */
+  .footer-contact p {
+    margin: 3px 0;
+    color: #bbb;
+  }
+  
+  /* Social Links */
+  .footer-social {
+    flex: 1;
+    min-width: 180px;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    color: #A78BFA;
+  }
+  
+  /* Bottom Footer */
+  .footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    border-top: 1px solid #121010;
+    color: #bbb;
+    font-size: 12px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-logo,
+    .footer-links,
+    .footer-contact,
+    .footer-social {
+      margin-bottom: 20px;
+    }
+  
+    .social-links {
+      justify-content: center;
+    }
+  }
+  
+  
+  /* Additional Animations */
+  .pet-card:nth-child(1) { animation-delay: 0.1s; }
+  .pet-card:nth-child(2) { animation-delay: 0.3s; }
+  .pet-card:nth-child(3) { animation-delay: 0.5s; }
+  
+  /* Fancy hover effects */
+  .pet-card:hover .pet-name {
+    color: #1CDC1B;
+  }
+  
+  .auth-button:active {
+    transform: scale(0.95);
+  }

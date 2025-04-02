@@ -40,7 +40,7 @@ a {
   100% { box-shadow: 0 0 0 0 rgba(39, 119, 122, 0); }
 }
 
-/* Header Styles */
+Header Styles
 .header {
   background-color: #111; /* Dark background to match footer */
   position: fixed;
@@ -52,7 +52,7 @@ a {
   transition: background-color 0.3s ease;
 }
 
-/* Header Container */
+Header Container
 .header-container {
   display: flex;
   justify-content: space-between;

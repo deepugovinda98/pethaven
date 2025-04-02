@@ -1,48 +1,68 @@
+/* Ensures proper spacing with the navbar and footer */
 .contact-container {
-    max-width: 500px;
-    margin: auto;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  max-width: 500px;
+  margin: 80px auto 50px auto; /* Adds margin at the top and bottom */
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-height: 60vh; /* Leaves space for the footer */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Heading styling */
+.contact-container h2 {
+  color: #27777A;
+  margin-bottom: 10px;
+}
+
+/* Form layout */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Input fields styling */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Textarea styling */
+.contact-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+/* Submit button */
+.contact-form button {
+  background: #27777A;
+  color: white;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #1e5e60;
+}
+
+/* Ensures responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .contact-container {
+    width: 90%;
+    margin-top: 100px; /* Extra space for mobile navbar */
   }
-  
-  .contact-container h2 {
-    color: #27777A;
-  }
-  
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  
-  .contact-form textarea {
-    height: 100px;
-    resize: none;
-  }
-  
-  .contact-form button {
-    background: #8F6AF9;
-    color: white;
-    padding: 12px;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 5px;
-  }
-  
-  .contact-form button:hover {
-    background: #1e5e60;
-  }
+}

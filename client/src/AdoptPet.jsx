@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./AdoptPet.css";
+import Navbar from "./navbar";
+import Footer from "./Footer";
 
 const AdoptPet = () => {
   const [pets, setPets] = useState([]);
@@ -13,6 +15,9 @@ const AdoptPet = () => {
   }, []);
 
   return (
+    <div>
+    <Navbar />
+
     <div className="adopt-pet-container">
       <h2>Adopt a Pet</h2>
       <div className="pet-list">
@@ -29,6 +34,8 @@ const AdoptPet = () => {
           <p className="no-pets">No pets available for adoption at the moment.</p>
         )}
       </div>
+      </div>
+      <Footer />
     </div>
   );
 };

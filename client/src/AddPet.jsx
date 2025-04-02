@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./AddPet.css";
+import Navbar from "./navbar";
+import Footer from "./Footer";
 
 const AddPet = () => {
   const navigate = useNavigate();
@@ -62,45 +64,51 @@ const AddPet = () => {
   };
 
   return isLoggedIn ? (
-    <div className="add-pet-container">
-      <h2>Add a Pet</h2>
-      <form onSubmit={handleSubmit} className="add-pet-form">
-        <input type="text" name="name" placeholder="Pet Name" value={petData.name} onChange={handleChange} required />
-        <input type="text" name="species" placeholder="Species" value={petData.species} onChange={handleChange} required />
-        <input type="text" name="breed" placeholder="Breed" value={petData.breed} onChange={handleChange} required />
-        <input type="number" name="age" placeholder="Age in years" value={petData.age} onChange={handleChange} required />
 
-        <select name="gender" value={petData.gender} onChange={handleChange} required>
-          <option value="">Select Gender</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-        </select>
+    <div>
+      <Navbar />
 
-        <textarea name="pet_details" placeholder="Short Description" value={petData.pet_details} onChange={handleChange} required></textarea>
+      <div className="add-pet-container">
+        <h2>Add a Pet</h2>
+        <form onSubmit={handleSubmit} className="add-pet-form">
+          <input type="text" name="name" placeholder="Pet Name" value={petData.name} onChange={handleChange} required />
+          <input type="text" name="species" placeholder="Species" value={petData.species} onChange={handleChange} required />
+          <input type="text" name="breed" placeholder="Breed" value={petData.breed} onChange={handleChange} required />
+          <input type="number" name="age" placeholder="Age in years" value={petData.age} onChange={handleChange} required />
 
-        <input type="file" name="photos" placeholder="Photo URL" value={petData.photos} onChange={handleChange} required />
-        <input type="text" name="health_status" placeholder="Health Status" value={petData.health_status} onChange={handleChange} required />
+          <select name="gender" value={petData.gender} onChange={handleChange} required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
 
-        <div className="checkbox-container">
-          <label htmlFor="vaccinated">Vaccinated</label>
-          <input type="checkbox" id="vaccinated" name="vaccinated" checked={petData.vaccinated} onChange={handleChange} />
-        </div>
+          <textarea name="pet_details" placeholder="Short Description" value={petData.pet_details} onChange={handleChange} required></textarea>
+
+          <input type="file" name="photos" placeholder="Photo URL" value={petData.photos} onChange={handleChange} required />
+          <input type="text" name="health_status" placeholder="Health Status" value={petData.health_status} onChange={handleChange} required />
+
+          <div className="checkbox-container">
+            <label htmlFor="vaccinated">Vaccinated</label>
+            <input type="checkbox" id="vaccinated" name="vaccinated" checked={petData.vaccinated} onChange={handleChange} />
+          </div>
 
 
-        {/* <label>
+          {/* <label>
           <input type="checkbox" name="vaccinated" checked={petData.vaccinated} onChange={handleChange} />
           Vaccinated
         </label> */}
 
-        <input type="text" name="documents_link" placeholder="Documents Link (if any)" value={petData.documents_link} onChange={handleChange} />
+          <input type="text" name="documents_link" placeholder="Documents Link (if any)" value={petData.documents_link} onChange={handleChange} />
 
-        <button type="submit">Add Pet</button>
+          <button type="submit">Add Pet</button>
 
-        <Link to="/home" className="home-link">Return to home</Link>
-      </form>
+          <Link to="/home" className="home-link">Return to home</Link>
+        </form>
 
+      </div>
 
-    </div>
+    <Footer/>
+    </div >
   ) : null;
 };
 

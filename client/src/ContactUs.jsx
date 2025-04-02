@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./ContactUs.css";
+import Navbar from "./navbar";
+import Footer from "./Footer";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -21,16 +23,20 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="contact-container">
-      <h2>Contact Us</h2>
-      <p>Have questions? Feel free to reach out to us!</p>
-      <form onSubmit={handleSubmit} className="contact-form">
-        <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required />
-        <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required />
-        <input type="tel" name="phone" placeholder="Your Phone Number" value={formData.phone} onChange={handleChange} required />
-        <textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleChange} required></textarea>
-        <button type="submit">Submit</button>
-      </form>
+    <div>
+      <Navbar />
+      <div className="contact-container">
+        <h2>Contact Us</h2>
+        <p>Have questions? Feel free to reach out to us!</p>
+        <form onSubmit={handleSubmit} className="contact-form">
+          <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required />
+          <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required />
+          <input type="tel" name="phone" placeholder="Your Phone Number" value={formData.phone} onChange={handleChange} required />
+          <textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleChange} required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <Footer />
     </div>
   );
 };

@@ -27,7 +27,7 @@ const Footer = () => {
         <div className="footer-contact">
           <h4>Contact Us</h4>
           <p>123 Pet Street, Pet-Haven</p>
-          <p>Email: info@pethaven.com</p>
+          <p>Email: sonumirzaa02@gmail.com</p>
           <p>Phone: (894) 319-8374</p>
         </div>
 

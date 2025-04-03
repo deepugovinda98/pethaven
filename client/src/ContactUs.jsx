@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 import "./ContactUs.css";
 import Navbar from "./navbar";
 import Footer from "./Footer";
@@ -18,8 +19,29 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Thank you for contacting us! We will get back to you soon.");
-    setFormData({ name: "", email: "", phone: "", message: "" }); // Reset form after submission
+
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+    };
+
+    emailjs
+      .send(
+        "service_ulfegrj", // Replace with your actual EmailJS service ID
+        "template_fikpdw7", // Replace with your actual EmailJS template ID
+        templateParams,
+        "9HlwFosI1V8KIvjCz" // Replace with your actual EmailJS user/public key
+      )
+      .then(() => {
+        alert("Message sent successfully!");
+        setFormData({ name: "", email: "", phone: "", message: "" }); // Reset form
+      })
+      .catch((err) => {
+        console.error("Error sending email:", err);
+        alert("Failed to send message.");
+      });
   };
 
   return (

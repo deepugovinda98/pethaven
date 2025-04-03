@@ -22,13 +22,12 @@ const getApprovedPets = async (req, res) => {
 
 
 const addPet = async (req, res) => {
-  const { name, species, breed, age, gender, pet_details, photos, health_status, vaccinated, documents_link, owner_id } = req.body;
-
-  if (!owner_id) {
-    return res.status(400).json({ error: "User must be logged in to add a pet." });
-  }
-
   try {
+    const { name, species, breed, age, gender, pet_details, health_status, vaccinated, documents_link, owner_id } = req.body;
+
+    // Get uploaded file path
+    const photoPath = req.file ? `/uploads/${req.file.filename}` : null;
+
     const newPet = new Pet({
       name,
       species,
@@ -36,18 +35,18 @@ const addPet = async (req, res) => {
       age,
       gender,
       pet_details,
-      photos,
       health_status,
       vaccinated,
       documents_link,
       owner_id,
-      approved: false // Default: waiting for admin approval
+      photos: photoPath // Save image path
     });
 
     await newPet.save();
-    res.status(201).json({ message: "Pet added successfully, pending approval!", pet: newPet });
-  } catch (err) {
-    res.status(500).json({ error: "Server error while adding pet" });
+    res.status(201).json({ message: "Pet added successfully!", pet: newPet });
+  } catch (error) {
+    console.error("Error adding pet:", error);
+    res.status(500).json({ error: "Failed to add pet" });
   }
 };
 

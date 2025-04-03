@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import "./PetDetails.css";
+import Navbar from './navbar';
+import Footer from './Footer';
 
 const PetDetails = () => {
   const { id } = useParams();
@@ -41,7 +43,7 @@ const PetDetails = () => {
     }
 
     setPet(pets[id]);
-    
+
     // Check authentication state
     const token = localStorage.getItem("token");
     setIsLoggedIn(!!token);
@@ -60,60 +62,35 @@ const PetDetails = () => {
   };
 
   return (
-    <div className="pet-detail-container">
-      {/* Header */}
-      <header className="header">
-        <div className="header-container">
-          <h1 className="header-logo">Pet Haven</h1>
-          <nav className="header-nav">
-            <ul className="nav-list">
-              <li className="nav-item">
-                <Link to="/" className="nav-link">Home</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/about" className="nav-link">About Us</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/pets" className="nav-link">View Pets</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/contact" className="nav-link">Contact Us</Link>
-              </li>
-            </ul>
-          </nav>
-          <Link to="/login" className="auth-button">
-            {isLoggedIn ? "Logout" : "Login"}
-          </Link>
-        </div>
-      </header>
+    <div>
 
-      {/* Main Content */}
-      <main className="pet-detail-content">
-        <div className="pet-profile">
-          <div className="pet-image-container">
-            <img src={pet.image} alt={pet.name} className="pet-image" />
-          </div>
-          <div className="pet-info">
-            <h1 className="pet-name">{pet.name}</h1>
-            <p className="pet-breed">{pet.breed}, {pet.age}</p>
-            <p className="pet-description">{pet.description}</p>
-            <button className="adopt-button" onClick={handleAdoptClick}>Adopt Me</button>
-            <Link to="/" className="back-button">Back to Home</Link>
-          </div>
-        </div>
-      </main>
+      <Navbar />
+      <div className="pet-detail-container">
 
-      {/* Footer */}
-      <footer className="footer">
-        <div className="container footer-container">
-          <p className="copyright">© 2025 Pet Haven. All rights reserved.</p>
-          <div className="social-links">
-            <Link to="/#" className="social-link" aria-label="Facebook">Facebook</Link>
-            <Link to="/#" className="social-link" aria-label="Twitter">Twitter</Link>
-            <Link to="/#" className="social-link" aria-label="Instagram">Instagram</Link>
+
+        {/* Main Content */}
+        <main className="pet-detail-content">
+          <div className="pet-profile">
+            <div className="pet-image-container">
+              <img src={pet.image} alt={pet.name} className="pet-image" style={{
+                width: "100%",
+                height: "450px",
+                objectFit: "cover"
+              }} />
+            </div>
+            <div className="pet-info">
+              <h1 className="pet-name">{pet.name}</h1>
+              <p className="pet-breed">{pet.breed}, {pet.age}</p>
+              <p className="pet-description">{pet.description}</p>
+              <button className="adopt-button" onClick={handleAdoptClick}>Adopt Me</button>
+              <Link to="/" className="back-button">Back to Home</Link>
+            </div>
           </div>
-        </div>
-      </footer>
+        </main>
+
+      </div>
+      <Footer />
+
     </div>
   );
 };

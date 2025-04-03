@@ -37,21 +37,28 @@ const AddPet = () => {
   }, [navigate]);
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setPetData({
-      ...petData,
-      [name]: type === "checkbox" ? checked : value
-    });
+    const { name, value, type, checked, files } = e.target;
+
+    if (type === "file") {
+      setPetData({ ...petData, [name]: files[0] });
+    } else {
+      setPetData({ ...petData, [name]: type === "checkbox" ? checked : value });
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    axios.post("http://localhost:3003/user/add-pet", {
-      ...petData,
-      photos: [petData.photos]
-    }, {
-      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+  
+    const formData = new FormData();
+    Object.keys(petData).forEach((key) => {
+      formData.append(key, petData[key]);
+    });
+  
+    axios.post("http://localhost:3003/user/add-pet", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      }
     })
       .then((res) => {
         alert("Pet added successfully! Pending admin approval.");
@@ -62,6 +69,9 @@ const AddPet = () => {
         alert("Failed to add pet. Please try again.");
       });
   };
+  
+
+
 
   return isLoggedIn ? (
 
@@ -84,7 +94,8 @@ const AddPet = () => {
 
           <textarea name="pet_details" placeholder="Short Description" value={petData.pet_details} onChange={handleChange} required></textarea>
 
-          <input type="file" name="photos" placeholder="Photo URL" value={petData.photos} onChange={handleChange} required />
+          <input type="file" name="photos" onChange={handleChange} required />
+
           <input type="text" name="health_status" placeholder="Health Status" value={petData.health_status} onChange={handleChange} required />
 
           <div className="checkbox-container">
@@ -107,7 +118,7 @@ const AddPet = () => {
 
       </div>
 
-    <Footer/>
+      <Footer />
     </div >
   ) : null;
 };

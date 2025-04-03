@@ -53,10 +53,26 @@ const HomePage = () => {
           <div className="container">
             <h2 className="section-title">Featured Pets</h2>
             <div className="pet-grid">
-              <div className="pet-card">
+              <div className="pet-card" style={{
+                width: "100%",
+                height: "300px",
+                objectFit: "cover",
+                borderRadius: "10px"
+              }}>
                 <div className="pet-image-container">
-                  <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Buddy" className="pet-image" />
+                  <img
+                    src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
+                    alt="Buddy"
+                    className="pet-image"
+                    style={{
+                      width: "100%",
+                      height: "300px",
+                      objectFit: "cover",
+                      borderRadius: "10px"
+                    }}
+                  />
                 </div>
+
                 <div className="pet-details">
                   <h3 className="pet-name">Buddy</h3>
                   <p className="pet-breed">Golden Retriever, 2 years old</p>
@@ -64,9 +80,21 @@ const HomePage = () => {
                 </div>
               </div>
 
-              <div className="pet-card">
+              <div className="pet-card" style={{
+                width: "100%",
+                height: "300px",
+                objectFit: "cover",
+                borderRadius: "10px"
+              }}>
                 <div className="pet-image-container">
-                  <img src="https://images.unsplash.com/photo-1568572933382-74d440642117?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZG9nfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Luna" className="pet-image" />
+                  <img src="https://images.unsplash.com/photo-1568572933382-74d440642117?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZG9nfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Luna" className="pet-image"
+                    style={{
+                      width: "100%",
+                      height: "300px",
+                      objectFit: "cover",
+                      borderRadius: "10px"
+                    }}
+                  />
                 </div>
                 <div className="pet-details">
                   <h3 className="pet-name">Luna</h3>
@@ -75,9 +103,21 @@ const HomePage = () => {
                 </div>
               </div>
 
-              <div className="pet-card">
+              <div className="pet-card" style={{
+                width: "100%",
+                height: "300px",
+                objectFit: "cover",
+                borderRadius: "10px"
+              }}>
                 <div className="pet-image-container">
-                  <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZG9nfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Max" className="pet-image" />
+                  <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZG9nfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Max" className="pet-image"
+                    style={{
+                      width: "100%",
+                      height: "300px",
+                      objectFit: "cover",
+                      borderRadius: "10px"
+                    }}
+                  />
                 </div>
                 <div className="pet-details">
                   <h3 className="pet-name">Max</h3>
@@ -106,7 +146,7 @@ const HomePage = () => {
           </section>
         </section>
 
-        
+
 
 
       </div>

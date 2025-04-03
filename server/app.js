@@ -18,6 +18,9 @@ app.use("/auth", authRoutes);
 app.use("/user", userRoutes); 
 app.use("/admin", adminRoutes);
 
+// Serve uploaded images
+app.use("/uploads", express.static("uploads"));
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });

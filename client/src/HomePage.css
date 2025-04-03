@@ -340,7 +340,7 @@ Header Container
 }
 
 .pet-image-container {
-  height: 200px; /* Reduce height */
+  height: 100%; /* Reduce height */
   width: 100%; /* Ensure it adapts to the card width */
   overflow: hidden;
   display: flex;
@@ -351,7 +351,7 @@ Header Container
 .pet-image {
   
   width: 80%; /* Reduce width */
-  height: 100px; /* Maintain aspect ratio */
+  height: 100%; /* Maintain aspect ratio */
   object-fit: cover;
   transition: transform 0.5s ease;
 }

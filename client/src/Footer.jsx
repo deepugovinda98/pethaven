@@ -26,9 +26,9 @@ const Footer = () => {
         {/* Contact Info */}
         <div className="footer-contact">
           <h4>Contact Us</h4>
-          <p>123 Pet Street, Pawville</p>
+          <p>123 Pet Street, Pet-Haven</p>
           <p>Email: info@pethaven.com</p>
-          <p>Phone: (123) 456-7890</p>
+          <p>Phone: (894) 319-8374</p>
         </div>
 
         {/* Social Links */}

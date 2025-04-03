@@ -53,7 +53,7 @@ const AdminDashboard = () => {
   // Approve Pet
   const handleApprove = (id) => {
     axios
-      .patch(`http://localhost:3003/admin/approve/${id}`)
+    .patch(`http://localhost:3003/admin/approve/${id}`)
       .then((res) => {
         alert("Pet approved!");
         setPets(

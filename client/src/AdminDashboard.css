@@ -12,6 +12,7 @@
   overflow: auto;
   transition: all 0.3s ease;
   background-color: #f7fafc;
+  position: relative;
 }
 
 .dashboard-content {
@@ -37,6 +38,7 @@
   border-right: 1px solid #e5e7eb;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
 
 .sidebar-expanded {
@@ -256,6 +258,8 @@
 .pet-management-section {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  animation: fade-in 0.3s ease-out;
 }
 
 .pet-management-section h2 {
@@ -267,15 +271,16 @@
 
 .table-container {
   overflow-x: auto;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  padding: 1rem;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
-  background-color: white;
-  border-radius: 0.5rem;
-  overflow: hidden;
 }
 
 th, td {
@@ -306,6 +311,7 @@ tr:hover {
   border-radius: 0.25rem;
   cursor: pointer;
   transition: background-color 0.2s;
+  margin-right: 0.5rem;
 }
 
 .approve-btn:hover {
@@ -326,9 +332,7 @@ tr:hover {
   background-color: #cc0000;
 }
 
-
 /* Logout Button */
-/* Logout Button - Top Right Corner */
 .logout-btn {
   position: absolute;
   top: 1rem;
@@ -344,12 +348,12 @@ tr:hover {
   transition: background-color 0.2s;
   display: inline-block;
   width: 100px;
+  z-index: 5;
 }
 
 .logout-btn:hover {
   background-color: #cc0000;
 }
-
 
 /* Footer */
 .admin-footer {
@@ -358,6 +362,13 @@ tr:hover {
   text-align: center;
   color: #6b7280;
   border-top: 1px solid #e5e7eb;
+}
+
+/* Tab Content Transitions */
+.pet-management-section, 
+.user-management-section {
+  opacity: 0;
+  animation: fade-in 0.3s ease-out forwards;
 }
 
 /* Animations */

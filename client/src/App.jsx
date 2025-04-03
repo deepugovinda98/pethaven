@@ -10,6 +10,8 @@ import AdoptPet from './AdoptPet';
 import ContactUs from './ContactUs';
 import Navbar from './navbar';
 import Footer from './Footer';
+import ViewDetails from './ViewDetails';
+
 
 
 function App() {
@@ -25,8 +27,10 @@ function App() {
         <Route path='/add-pet' element={<AddPet />} />
         <Route path="/adopt" element={<AdoptPet />} />
         <Route path="/contact" element={<ContactUs />} />
-        <Route path='/navbar' element={<Navbar/>}/>
-        <Route path='/footer' element={<Footer/>}/>
+        <Route path='/view/:id' element={<ViewDetails />} />
+        
+        <Route path='/navbar' element={<Navbar />} />
+        <Route path='/footer' element={<Footer />} />
       </Routes>
     </>
   );

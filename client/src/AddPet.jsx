@@ -38,46 +38,62 @@ const AddPet = () => {
 
   const handleChange = (e) => {
     const { name, value, type, checked, files } = e.target;
-
+  
     if (type === "file") {
-      setPetData({ ...petData, [name]: files[0] });
+      setPetData({ ...petData, [name]: files }); // Store as FileList
     } else {
       setPetData({ ...petData, [name]: type === "checkbox" ? checked : value });
     }
   };
+  
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("Session expired. Please log in again.");
+      navigate("/login");
+      return;
+    }
   
     const formData = new FormData();
     Object.keys(petData).forEach((key) => {
-      formData.append(key, petData[key]);
+      if (key === "photos" && petData.photos) {
+        for (let i = 0; i < petData.photos.length; i++) {
+          formData.append("photos", petData.photos[i]); // Append files correctly
+        }
+      } else {
+        formData.append(key, petData[key]); // Append other form fields
+      }
     });
   
-    axios.post("http://localhost:3003/user/add-pet", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-        Authorization: `Bearer ${localStorage.getItem("token")}`
-      }
-    })
-      .then((res) => {
-        alert("Pet added successfully! Pending admin approval.");
-        navigate("/home");
-      })
-      .catch((err) => {
-        console.error("Error adding pet:", err);
-        alert("Failed to add pet. Please try again.");
+    // Debugging - Log formData values
+    console.log("FormData being sent:");
+    for (let pair of formData.entries()) {
+      console.log(pair[0], pair[1]); 
+    }
+  
+    try {
+      const response = await axios.post("http://localhost:3003/user/add-pet", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`,
+        },
       });
+  
+      alert("Pet added successfully! Pending admin approval.");
+      navigate("/home");
+    } catch (error) {
+      console.error("Error adding pet:", error);
+      alert("Failed to add pet. Please try again.");
+    }
   };
   
 
-
-
   return isLoggedIn ? (
-
     <div>
       <Navbar />
-
       <div className="add-pet-container">
         <h2>Add a Pet</h2>
         <form onSubmit={handleSubmit} className="add-pet-form">
@@ -94,7 +110,7 @@ const AddPet = () => {
 
           <textarea name="pet_details" placeholder="Short Description" value={petData.pet_details} onChange={handleChange} required></textarea>
 
-          <input type="file" name="photos" onChange={handleChange} required />
+          <input type="file" name="photos" onChange={handleChange} multiple required />
 
           <input type="text" name="health_status" placeholder="Health Status" value={petData.health_status} onChange={handleChange} required />
 
@@ -103,23 +119,15 @@ const AddPet = () => {
             <input type="checkbox" id="vaccinated" name="vaccinated" checked={petData.vaccinated} onChange={handleChange} />
           </div>
 
-
-          {/* <label>
-          <input type="checkbox" name="vaccinated" checked={petData.vaccinated} onChange={handleChange} />
-          Vaccinated
-        </label> */}
-
           <input type="text" name="documents_link" placeholder="Documents Link (if any)" value={petData.documents_link} onChange={handleChange} />
 
           <button type="submit">Add Pet</button>
 
           <Link to="/home" className="home-link">Return to home</Link>
         </form>
-
       </div>
-
       <Footer />
-    </div >
+    </div>
   ) : null;
 };
 

@@ -1,0 +1,122 @@
+/* Ensure the entire page layout */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Container for the pet details */
+.view-details-container {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Flex container to align image and details */
+.pet-details-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* Image styling - aligned to the left */
+.pet-image {
+    width: 40%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Pet details section - aligned to the right */
+.pet-details {
+    width: 60%;
+    text-align: left;
+}
+
+/* Title styling */
+.pet-details h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Paragraph styles */
+.pet-details p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #555;
+}
+
+/* Buttons container */
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+/* Buttons styling */
+.adopt-button,
+.back-button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 150px;
+}
+
+/* Adopt button */
+.adopt-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.adopt-button:hover {
+    background-color: #218838;
+}
+
+/* Back button */
+.back-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.back-button:hover {
+    background-color: #c82333;
+}
+
+/* Ensure the footer is positioned correctly */
+.footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+}
+
+/* Responsive: Stack image and details vertically on smaller screens */
+@media (max-width: 768px) {
+    .pet-details-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .pet-image {
+        width: 100%;
+        max-height: 300px;
+    }
+    
+    .pet-details {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .button-container {
+        justify-content: center;
+    }
+}

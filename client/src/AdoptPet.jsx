@@ -5,6 +5,7 @@ import "./AdoptPet.css";
 import Navbar from "./navbar";
 import Footer from "./Footer";
 
+
 const AdoptPet = () => {
   const [pets, setPets] = useState([]);
 
@@ -23,7 +24,11 @@ const AdoptPet = () => {
           {pets.length > 0 ? (
             pets.map((pet) => (
               <div key={pet._id} className="pet-card">
-                <img src={pet.photos[0] || "/default-pet.jpg"} alt={pet.name} className="pet-image" />
+                <img
+                  src={`http://localhost:3003${pet.photos[0]}`}
+                  alt={pet.name}
+                  className="pet-image"
+                />
                 <h3>{pet.name}</h3>
                 <p>{pet.breed}, {pet.age} years old</p>
                 {/* Fixing the Link path */}

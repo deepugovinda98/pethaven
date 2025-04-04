@@ -2,13 +2,14 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const connectDB = require("./models/db");
+const path = require("path")
 
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 
 const app = express();
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT || 3004;
 
 // Middleware
 app.use(cors());
@@ -19,8 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 connectDB();
 
 // Serve uploaded images
-app.use("/uploads", express.static("uploads"));
-
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 // Use routes
 app.use("/auth", authRoutes);
 app.use("/user", userRoutes);
@@ -28,5 +28,5 @@ app.use("/admin", adminRoutes);
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
+  console.log(` Server running on http://localhost:${PORT}`);
 });
